@@ -51,7 +51,7 @@ android {
         }
         debug {
             // Use a different app ID for debug to allow its coexistence with release builds
-            applicationIdSuffix '.debug'
+            applicationIdSuffix '.debu'
             versionNameSuffix '-beta'
             pseudoLocalesEnabled true
 

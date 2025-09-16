@@ -62,11 +62,11 @@
             android:launchMode="singleTop"
             >
 
-            <!--intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter-->
+            </intent-filter>
         </activity>
 
         <activity
@@ -150,7 +150,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter-->
-            <intent-filter
+            <!--intent-filter
             >
                 <action android:name="android.intent.action.MAIN" />
                 <category
@@ -167,7 +167,7 @@
                     android:name="android.intent.category.LAUNCHER_APP"
                 >
                 </category>
-			</intent-filter>
+			</intent-filter-->
         </activity>
         
         <service
@@ -202,27 +202,6 @@
                 <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
             </intent-filter>
         </receiver>
-         <receiver
-            android:name="com.emanuelef.remote_capture.activities.admin"
-            android:permission="android.permission.BIND_DEVICE_ADMIN"
-            android:exported="false"
-            android:description="@string/pcapdroid_app_name">
-
-            <meta-data
-                android:name="android.app.device_admin"
-                android:resource="@xml/admin">
-
-            </meta-data>
-
-            <intent-filter>
-
-                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED">
-
-                </action>
-
-            </intent-filter>
-
-        </receiver>
         <receiver
             android:name="com.emanuelef.remote_capture.fragments.StatusReceiver"
             android:exported="true">
@@ -233,11 +212,11 @@
            <activity
                 android:name="com.emanuelef.remote_capture.activities.MDMStatusActivity"
                 android:theme="@style/AppThemeReg"
-                android:exported="true">
-                <intent-filter>
+                >
+                <!--intent-filter>
                     <action android:name="android.intent.action.MAIN" />
                     <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
+                </intent-filter-->
             </activity>
              <activity android:name="com.emanuelef.remote_capture.activities.MDMSettingsActivity" />
              <activity android:name="com.emanuelef.remote_capture.activities.RestrictionManagementActivity" />
