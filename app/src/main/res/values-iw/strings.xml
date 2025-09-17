@@ -18,8 +18,8 @@
     <string name="send_mail">שלח מייל</string>
     <string name="send">שלח</string>
     <string name="empty">ריק</string>
-    <string name="mailsub">רשימה לבנה(בטא)</string>
-    <string name="mailbod">השאר כאן הארות והערות ודיווחים ובקשות</string>
+    <string name="mailsub">רשימת דומיינים (בטא)</string>
+    <string name="mailbod">השאר כאן מידע לאיזה אפליקציות התכוונת להקליט!</string>
     <string name="send_successful">נשלח בהצלחה</string>
     <string name="mmode_multimedia">מולטימדיה</string>
     <string name="mmode_all">הכל</string>

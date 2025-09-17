@@ -321,6 +321,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             //Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(GITHUB_PROJECT_URL + "/tree/" + ref));
             //Utils.startActivity(this, browserIntent);
             //can check version update hare
+            
         });
     }
 
@@ -779,7 +780,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                         @Override
                         public void run() {
                             Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-                            startActivity(intent);
+                            //startActivity(intent);
                         }
                     },MainActivity.this);
             return true;

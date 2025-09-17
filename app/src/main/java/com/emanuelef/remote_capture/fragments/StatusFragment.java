@@ -121,8 +121,8 @@ public class StatusFragment extends Fragment implements AppStateListener, MenuPr
     private TextView mCollectorInfoText;
     private ImageView mCollectorInfoIcon;
     private TextView mCaptureStatus;
-    private TextView startmdmvpn;
-    private TextView removemdmvpn;
+    //private TextView startmdmvpn;
+    //private TextView removemdmvpn;
     //private TextView tvaa;
     //private TextView tvab;
     TextView tvac;
@@ -135,23 +135,23 @@ public class StatusFragment extends Fragment implements AppStateListener, MenuPr
     private Set<String> mAppFilter;
     private TextView mFilterRootDecryptionWarning;
     private Context mcon;
-    private ComponentName compName;
+    //private ComponentName compName;
     SharedPreferences sp;
     SharedPreferences.Editor spe;
     public EditText edtxa,edtxb,edtxc;
     TextView tva,tvb,tvta,tvtb;
     Button bua,bub,buc;
     AlertDialog alertDialog,alertDialoga;
-    public static final String modesp="mode";
+    //public static final String modesp="mode";
 	//public static sModetype smtype;
-	AlertDialog alertDialogmode;
+	//AlertDialog alertDialogmode;
 	
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         mActivity = (MainActivity) context;
         mcon = context;
-	compName = new ComponentName(context, admin.class);
+	//compName = new ComponentName(context, admin.class);
 	    
     }
 
@@ -186,8 +186,8 @@ public class StatusFragment extends Fragment implements AppStateListener, MenuPr
         mCollectorInfoText = mCollectorInfoLayout.findViewById(R.id.collector_info_text);
         mCollectorInfoIcon = mCollectorInfoLayout.findViewById(R.id.collector_info_icon);
         mCaptureStatus = view.findViewById(R.id.status_view);
-        startmdmvpn = view.findViewById(R.id.startmdm);
-        removemdmvpn = view.findViewById(R.id.removemdm);
+        //startmdmvpn = view.findViewById(R.id.startmdm);
+        //removemdmvpn = view.findViewById(R.id.removemdm);
         //tvaa = view.findViewById(R.id.tva);
         //tvab = view.findViewById(R.id.tvb);
 	    //tvac = view.findViewById(R.id.tvc);
@@ -231,7 +231,7 @@ public class StatusFragment extends Fragment implements AppStateListener, MenuPr
                 mActivity.startCapture();
         });
         
-        startmdmvpn.setOnClickListener(v -> {
+        /*startmdmvpn.setOnClickListener(v -> {
         PasswordManager.requestPasswordAndSave(new Runnable() {
                   @Override
                   public void run() {
@@ -258,7 +258,7 @@ public class StatusFragment extends Fragment implements AppStateListener, MenuPr
                             }
                         },mActivity);
             //checkpassword(false,"removemdm");
-        });
+        });*/
         /*tvaa.setOnClickListener(v -> {
                     PasswordManager.requestPasswordAndSave(new Runnable() {
                             @Override
@@ -536,11 +536,13 @@ public class StatusFragment extends Fragment implements AppStateListener, MenuPr
                 mStopBtn.setEnabled(true);
                 mStopBtn.setVisible(!CaptureService.isAlwaysOnVPN());
                 mMenuSettings.setEnabled(false);
+                mMenuSettings.setVisible(false);
             } else { // ready || starting
                 mStopBtn.setVisible(false);
                 mStartBtn.setEnabled(true);
                 mStartBtn.setVisible(!CaptureService.isAlwaysOnVPN());
-                mMenuSettings.setEnabled(true);//ja disable.. enable now for js
+                mMenuSettings.setEnabled(false);//ja disable.. enable now for js
+                mMenuSettings.setVisible(false);
             }
         }
 
@@ -606,13 +608,13 @@ public class StatusFragment extends Fragment implements AppStateListener, MenuPr
         startActivity(intent);
     }
 	
-    public  static  void p(DevicePolicyManager devicePolicyManager, ComponentName componentName, String string, boolean bl) throws PackageManager.NameNotFoundException {
+    //public  static  void p(DevicePolicyManager devicePolicyManager, ComponentName componentName, String string, boolean bl) throws PackageManager.NameNotFoundException {
         //   try {
-        devicePolicyManager.setAlwaysOnVpnPackage(componentName, string, bl);
+        //devicePolicyManager.setAlwaysOnVpnPackage(componentName, string, bl);
         //  } catch (Exception e) {
         //   Toast.makeText(getApplicationContext(),""+e,Toast.LENGTH_SHORT).show();
         // }
-    }
+    //}
 /*    void mactivatepcapmdm() {
 		try {
             DevicePolicyManager dpm=(DevicePolicyManager)mcon.getSystemService("device_policy");

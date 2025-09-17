@@ -23,7 +23,7 @@ public class PasswordManager {
     private static final String PREFS_NAME = "MDMPrefs";
     private static final String KEY_PASSWORD_HASH = "admin_password_hash";
     private static final int MIN_PASSWORD_LENGTH = 4; // אורך סיסמה מינימלי
-    public static boolean pwopen=false;
+    public static boolean pwopen=true;
     /**
      * מגבבת (hashes) סיסמה באמצעות SHA-256 ושומרת אותה ב-SharedPreferences.
      *

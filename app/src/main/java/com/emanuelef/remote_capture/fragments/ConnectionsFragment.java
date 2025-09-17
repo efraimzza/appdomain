@@ -136,6 +136,7 @@ public class ConnectionsFragment extends Fragment implements ConnectionsListener
     private MenuItem mMenuFilter;
     private MenuItem mMenuItemSearch;
     private MenuItem mSave;
+    private MenuItem mSenddev;
     private Uri mCsvFname;
     private AppsResolver mApps;
     private SearchView mSearchView;
@@ -1014,6 +1015,7 @@ public class ConnectionsFragment extends Fragment implements ConnectionsListener
         menuInflater.inflate(R.menu.connections_menu, menu);
 
         mSave = menu.findItem(R.id.save);
+        mSenddev=menu.findItem(R.id.senddev);
         mMenuFilter = menu.findItem(R.id.edit_filter);
         mMenuItemSearch = menu.findItem(R.id.search);
 
@@ -1052,12 +1054,14 @@ public class ConnectionsFragment extends Fragment implements ConnectionsListener
     private void refreshMenuIcons() {
         if(mSave == null)
             return;
-
+        if(mSenddev == null)
+            return;
         boolean is_enabled = (CaptureService.getConnsRegister() != null);
 
         mMenuItemSearch.setVisible(is_enabled); // NOTE: setEnabled does not work for this
         //mMenuFilter.setEnabled(is_enabled);
         mSave.setEnabled(is_enabled);
+        mSenddev.setEnabled(is_enabled);
     }
 
     private void dumpCsv() {

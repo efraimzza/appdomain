@@ -43,9 +43,9 @@
     
     <application
         android:name=".PCAPdroid"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/pcapdroid_app_name"
-        android:roundIcon="@drawable/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:banner="@drawable/banner"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
@@ -144,7 +144,7 @@
             android:name=".activities.hom"
             android:theme="@style/AppTheme.SplashScreen"
             android:launchMode="singleTop"
-            android:exported="true">
+            android:exported="false">
             
             <!--intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
