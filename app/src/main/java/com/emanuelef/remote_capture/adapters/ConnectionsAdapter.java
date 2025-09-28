@@ -455,6 +455,7 @@ public class ConnectionsAdapter extends RecyclerView.Adapter<ConnectionsAdapter.
         boolean malwareDetection = Prefs.isMalwareDetectionEnabled(mContext, PreferenceManager.getDefaultSharedPreferences(mContext));
 
         String header = mContext.getString(R.string.connections_csv_fields);
+        header = "DstIp,App,PackageName,Info";
         builder.append(header);
         if(malwareDetection)
             builder.append(",Malicious");
@@ -467,23 +468,23 @@ public class ConnectionsAdapter extends RecyclerView.Adapter<ConnectionsAdapter.
             if(conn != null) {
                 AppDescriptor app = resolver.getAppByUid(conn.uid, 0);
 
-                builder.append(conn.ipproto);                               builder.append(",");
-                builder.append(conn.src_ip);                                builder.append(",");
-                builder.append(conn.src_port);                              builder.append(",");
+//                builder.append(conn.ipproto);                               builder.append(",");
+//                builder.append(conn.src_ip);                                builder.append(",");
+//                builder.append(conn.src_port);                              builder.append(",");
                 builder.append(conn.dst_ip);                                builder.append(",");
-                builder.append(conn.dst_port);                              builder.append(",");
-                builder.append(conn.uid);                                   builder.append(",");
+//                builder.append(conn.dst_port);                              builder.append(",");
+//                builder.append(conn.uid);                                   builder.append(",");
                 builder.append((app != null) ? app.getName() : "");         builder.append(",");
                 builder.append((app != null) ? app.getPackageName() : "");  builder.append(",");
-                builder.append(conn.l7proto);                               builder.append(",");
-                builder.append(conn.getStatusLabel(mContext));              builder.append(",");
-                builder.append((conn.info != null) ? conn.info : "");       builder.append(",");
-                builder.append(conn.sent_bytes);                            builder.append(",");
-                builder.append(conn.rcvd_bytes);                            builder.append(",");
-                builder.append(conn.sent_pkts);                             builder.append(",");
-                builder.append(conn.rcvd_pkts);                             builder.append(",");
-                builder.append(Utils.formatMillisIso8601(mContext, conn.first_seen));                            builder.append(",");
-                builder.append(Utils.formatMillisIso8601(mContext, conn.last_seen));
+//                builder.append(conn.l7proto);                               builder.append(",");
+//                builder.append(conn.getStatusLabel(mContext));              builder.append(",");
+                builder.append((conn.info != null) ? conn.info : "");       //builder.append(",");
+//                builder.append(conn.sent_bytes);                            builder.append(",");
+//                builder.append(conn.rcvd_bytes);                            builder.append(",");
+//                builder.append(conn.sent_pkts);                             builder.append(",");
+//                builder.append(conn.rcvd_pkts);                             builder.append(",");
+//                builder.append(Utils.formatMillisIso8601(mContext, conn.first_seen));                            builder.append(",");
+//                builder.append(Utils.formatMillisIso8601(mContext, conn.last_seen));
 
                 if(malwareDetection) {
                     builder.append(",");
